@@ -1,7 +1,10 @@
 public class LargestPrime {
     public static int getLargestPrime(int number) {
-        System.out.println("test");
+        int divisor = number;
 
+        while(number > 0) {
+
+        }
         return -1;
     }
 }
