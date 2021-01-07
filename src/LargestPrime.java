@@ -8,11 +8,16 @@ public class LargestPrime {
         }
 
         while(number % 2 == 0) {
-            System.out.println("The largest prime is 2");
-            return 2;
+            if(number % 3 == 0) {
+                System.out.printf("The largest prime is 3");
+                return 3;
+            } else {
+                System.out.println("The largest prime is 2");
+                return 2;
+            }
         }
 
-        for(int i = 2; i <= Math.sqrt(number); i+=2) {
+        for(int i = 3; i <= Math.sqrt(number); i+=2) {
           while(number % i == 0) {
               maxPrime = i;
               number /= i;
