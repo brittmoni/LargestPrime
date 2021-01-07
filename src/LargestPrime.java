@@ -1,10 +1,30 @@
 public class LargestPrime {
     public static int getLargestPrime(int number) {
-        int divisor = number;
+        int maxPrime = -1;
 
-        while(number > 0) {
-
+        if(number == 0 || number == 1 || number < 0) {
+            System.out.println(-1);
+            return -1;
         }
+
+        while(number % 2 == 0) {
+            System.out.println("The largest prime is 2");
+            return 2;
+        }
+
+        for(int i = 2; i <= Math.sqrt(number); i+=2) {
+          while(number % i == 0) {
+              maxPrime = i;
+              number /= i;
+          }
+        }
+
+        if (number > 2) {
+            maxPrime = number;
+            System.out.println("The largest prime is " + maxPrime);
+            return maxPrime;
+        }
+
         return -1;
     }
 }
